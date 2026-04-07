@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="marquesDevsis — Desenvolvimento de sistemas, sites, suporte técnico, manutenção de computadores e consultoria de TI. Soluções digitais que transformam o seu negócio." />
+  <title>marquesDevsis | Soluções Digitais &amp; TI</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ════════ CANVAS PARTICLES BACKGROUND ════════ -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ════════ CURSOR CUSTOM ════════ -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ════════ HEADER / NAV ════════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#inicio" class="logo-link" aria-label="marquesDevsis — Home">
+        <div class="logo-icon" aria-hidden="true">
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="42" height="42" rx="10" fill="url(#logoGrad)"/>
+            <!-- M shape stylized -->
+            <path d="M8 31V11L15.5 23L21 14L26.5 23L34 11V31" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- Circuit nodes -->
+            <circle cx="34" cy="11" r="2.5" fill="#22D3EE"/>
+            <circle cx="8" cy="11" r="2.5" fill="#22D3EE"/>
+            <line x1="34" y1="8.5" x2="38" y2="6" stroke="#22D3EE" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="38" cy="5.5" r="1.2" fill="#22D3EE" opacity="0.7"/>
+            <line x1="34" y1="13.5" x2="38.5" y2="16" stroke="#22D3EE" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#153E7A"/>
+                <stop offset="100%" stop-color="#1696F3"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <span class="logo-text">
+          <span class="logo-marques">marques</span><span class="logo-devsis">Devsis</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio" class="nav-link active">Início</a></li>
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#servicos" class="nav-link">Serviços</a></li>
+          <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contato" class="btn btn-primary btn-sm header-cta">
+        Fale Conosco <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ════════ MOBILE MENU ════════ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav>
+      <ul>
+        <li><a href="#inicio" class="nav-link">Início</a></li>
+        <li><a href="#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="#servicos" class="nav-link">Serviços</a></li>
+        <li><a href="#diferenciais" class="nav-link">Diferenciais</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+        <li><a href="#contato" class="nav-link">Contato</a></li>
+      </ul>
+      <a href="#contato" class="btn btn-primary">Solicitar Orçamento</a>
+    </nav>
+  </div>
+
+  <main>
+
+    <!-- ════════════════════════════════════
+         HERO SECTION
+    ════════════════════════════════════ -->
+    <section class="hero" id="inicio">
+      <div class="hero-bg-grid" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+
+      <div class="container hero-inner">
+        <div class="hero-badge reveal-fade-up">
+          <span class="badge-dot"></span>
+          <span>Transformando ideias em tecnologia</span>
+        </div>
+
+        <h1 class="hero-title reveal-fade-up">
+          Soluções digitais que<br />
+          <span class="text-gradient">impulsionam</span> seu<br />
+          negócio ao próximo nível
+        </h1>
+
+        <p class="hero-subtitle reveal-fade-up">
+          Do desenvolvimento de sistemas personalizados à manutenção completa da sua infraestrutura de TI — entregamos tecnologia que funciona de verdade.
+        </p>
+
+        <div class="hero-actions reveal-fade-up">
+          <a href="#servicos" class="btn btn-primary btn-lg">
+            Nossos Serviços
+            <span class="btn-shine"></span>
+          </a>
+          <a href="#contato" class="btn btn-outline btn-lg">
+            Solicitar Orçamento <i class="fa-solid fa-chevron-right"></i>
+          </a>
+        </div>
+
+        <div class="hero-stats reveal-fade-up">
+          <div class="stat-item">
+            <span class="stat-number" data-target="120">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Projetos Entregues</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="98">0</span><span class="stat-plus">%</span>
+            <span class="stat-label">Clientes Satisfeitos</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="8">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Anos de Experiência</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="24">0</span><span class="stat-plus">/7</span>
+            <span class="stat-label">Suporte Disponível</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <div class="scroll-mouse">
+          <div class="scroll-wheel"></div>
+        </div>
+        <span>Role para explorar</span>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         SOBRE
+    ════════════════════════════════════ -->
+    <section class="sobre section-light" id="sobre">
+      <div class="container">
+        <div class="sobre-grid">
+          <div class="sobre-visual reveal-fade-left">
+            <div class="sobre-card-main">
+              <div class="sobre-icon-wrap">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <div class="sobre-card-content">
+                <p class="sobre-card-label">Fundada em</p>
+                <p class="sobre-card-value">2016</p>
+              </div>
+            </div>
+
+            <div class="sobre-tech-stack">
+              <p class="stack-label">Tecnologias que dominamos</p>
+              <div class="stack-grid">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">Node.js</span>
+                <span class="tech-tag">React</span>
+                <span class="tech-tag">Laravel</span>
+                <span class="tech-tag">MySQL</span>
+                <span class="tech-tag">WordPress</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">Linux</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">AWS</span>
+              </div>
+            </div>
+
+            <div class="sobre-floating-badge badge-top-right">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Segurança Garantida</span>
+            </div>
+            <div class="sobre-floating-badge badge-bottom-left">
+              <i class="fa-solid fa-bolt"></i>
+              <span>Alta Performance</span>
+            </div>
+          </div>
+
+          <div class="sobre-content reveal-fade-right">
+            <div class="section-tag">Quem Somos</div>
+            <h2 class="section-title">Tecnologia com propósito, resultado com excelência</h2>
+            <p class="section-text">
+              A <strong>marquesDevsis</strong> nasceu da paixão por tecnologia e da vontade de ajudar empresas de todos os portes a crescerem no ambiente digital. Somos especialistas em transformar desafios complexos em soluções simples, escaláveis e eficientes.
+            </p>
+            <p class="section-text">
+              Nossa equipe une experiência técnica sólida com uma visão estratégica de negócio, garantindo que cada projeto entregue não apenas funcione, mas gere resultados reais e mensuráveis.
+            </p>
+
+            <ul class="sobre-values">
+              <li>
+                <div class="value-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Comprometimento total</strong>
+                  <span>Cada projeto é tratado como se fosse o nosso próprio negócio.</span>
+                </div>
+              </li>
+              <li>
+                <div class="value-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Transparência e comunicação</strong>
+                  <span>Você acompanha cada etapa do desenvolvimento com clareza.</span>
+                </div>
+              </li>
+              <li>
+                <div class="value-icon"><i class="fa-solid fa-check"></i></div>
+                <div>
+                  <strong>Suporte pós-entrega</strong>
+                  <span>Não abandonamos nossos clientes após o projeto ser finalizado.</span>
+                </div>
+              </li>
+            </ul>
+
+            <a href="#contato" class="btn btn-primary">
+              Conheça nossa equipe <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         SERVIÇOS
+    ════════════════════════════════════ -->
+    <section class="servicos section-dark" id="servicos">
+      <div class="servicos-bg-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header text-center reveal-fade-up">
+          <div class="section-tag">O que fazemos</div>
+          <h2 class="section-title">Serviços completos para<br/>sua empresa crescer</h2>
+          <p class="section-subtitle">Do código ao suporte, cuidamos de toda a sua infraestrutura tecnológica com expertise e dedicação.</p>
+        </div>
+
+        <div class="servicos-grid">
+
+          <!-- Card 1: Desenvolvimento de Sistemas -->
+          <article class="service-card reveal-fade-up" data-delay="0">
+            <div class="service-card-inner">
+              <div class="service-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+                <div class="service-icon-bg" aria-hidden="true"></div>
+              </div>
+              <div class="service-number" aria-hidden="true">01</div>
+              <h3>Desenvolvimento de Sistemas</h3>
+              <p>Sistemas sob medida para automatizar processos, integrar departamentos e aumentar a produtividade da sua empresa.</p>
+              <ul class="service-features">
+                <li><i class="fa-solid fa-circle-check"></i> ERPs e CRMs personalizados</li>
+                <li><i class="fa-solid fa-circle-check"></i> APIs e integrações entre sistemas</li>
+                <li><i class="fa-solid fa-circle-check"></i> Painéis e dashboards gerenciais</li>
+                <li><i class="fa-solid fa-circle-check"></i> Aplicações web e mobile</li>
+              </ul>
+              <a href="#contato" class="service-cta">
+                Solicitar orçamento <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <div class="service-card-glow" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- Card 2: Criação de Sites -->
+          <article class="service-card reveal-fade-up" data-delay="100">
+            <div class="service-card-inner">
+              <div class="service-icon">
+                <i class="fa-solid fa-globe"></i>
+                <div class="service-icon-bg" aria-hidden="true"></div>
+              </div>
+              <div class="service-number" aria-hidden="true">02</div>
+              <h3>Criação de Sites</h3>
+              <p>Websites modernos, responsivos e otimizados para converter visitantes em clientes e fortalecer sua presença online.</p>
+              <ul class="service-features">
+                <li><i class="fa-solid fa-circle-check"></i> Sites institucionais e landing pages</li>
+                <li><i class="fa-solid fa-circle-check"></i> E-commerce e lojas virtuais</li>
+                <li><i class="fa-solid fa-circle-check"></i> SEO e otimização de performance</li>
+                <li><i class="fa-solid fa-circle-check"></i> Hospedagem e domínio gerenciados</li>
+              </ul>
+              <a href="#contato" class="service-cta">
+                Solicitar orçamento <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <div class="service-card-glow" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- Card 3: Suporte Técnico -->
+          <article class="service-card reveal-fade-up" data-delay="200">
+            <div class="service-card-inner">
+              <div class="service-icon">
+                <i class="fa-solid fa-headset"></i>
+                <div class="service-icon-bg" aria-hidden="true"></div>
+              </div>
+              <div class="service-number" aria-hidden="true">03</div>
+              <h3>Suporte Técnico</h3>
+              <p>Atendimento ágil e especializado para resolver problemas com softwares, equipamentos e sistemas no menor tempo possível.</p>
+              <ul class="service-features">
+                <li><i class="fa-solid fa-circle-check"></i> Suporte remoto e presencial</li>
+                <li><i class="fa-solid fa-circle-check"></i> Help desk e gestão de chamados</li>
+                <li><i class="fa-solid fa-circle-check"></i> Configuração de softwares</li>
+                <li><i class="fa-solid fa-circle-check"></i> Treinamento de usuários</li>
+              </ul>
+              <a href="#contato" class="service-cta">
+                Solicitar orçamento <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <div class="service-card-glow" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- Card 4: Manutenção de Computadores -->
+          <article class="service-card reveal-fade-up" data-delay="300">
+            <div class="service-card-inner">
+              <div class="service-icon">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <div class="service-icon-bg" aria-hidden="true"></div>
+              </div>
+              <div class="service-number" aria-hidden="true">04</div>
+              <h3>Manutenção de Computadores</h3>
+              <p>Manutenção preventiva e corretiva para garantir o máximo desempenho e vida útil dos equipamentos da sua empresa.</p>
+              <ul class="service-features">
+                <li><i class="fa-solid fa-circle-check"></i> Diagnóstico e reparo de hardware</li>
+                <li><i class="fa-solid fa-circle-check"></i> Limpeza e formatação</li>
+                <li><i class="fa-solid fa-circle-check"></i> Upgrade e substituição de peças</li>
+                <li><i class="fa-solid fa-circle-check"></i> Manutenção preventiva programada</li>
+              </ul>
+              <a href="#contato" class="service-cta">
+                Solicitar orçamento <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <div class="service-card-glow" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- Card 5: Consultoria de TI -->
+          <article class="service-card reveal-fade-up" data-delay="400">
+            <div class="service-card-inner">
+              <div class="service-icon">
+                <i class="fa-solid fa-chess"></i>
+                <div class="service-icon-bg" aria-hidden="true"></div>
+              </div>
+              <div class="service-number" aria-hidden="true">05</div>
+              <h3>Consultoria de TI</h3>
+              <p>Estratégia e planejamento tecnológico para alinhar a TI com os objetivos do seu negócio e maximizar o retorno sobre investimento.</p>
+              <ul class="service-features">
+                <li><i class="fa-solid fa-circle-check"></i> Planejamento estratégico de TI</li>
+                <li><i class="fa-solid fa-circle-check"></i> Gestão de projetos tecnológicos</li>
+                <li><i class="fa-solid fa-circle-check"></i> Análise de maturidade digital</li>
+                <li><i class="fa-solid fa-circle-check"></i> Redução de custos com tecnologia</li>
+              </ul>
+              <a href="#contato" class="service-cta">
+                Solicitar orçamento <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <div class="service-card-glow" aria-hidden="true"></div>
+            </div>
+          </article>
+
+          <!-- Card 6: Redes e Infraestrutura -->
+          <article class="service-card reveal-fade-up" data-delay="500">
+            <div class="service-card-inner">
+              <div class="service-icon">
+                <i class="fa-solid fa-network-wired"></i>
+                <div class="service-icon-bg" aria-hidden="true"></div>
+              </div>
+              <div class="service-number" aria-hidden="true">06</div>
+              <h3>Redes &amp; Infraestrutura</h3>
+              <p>Projeto, implantação e gerenciamento de redes corporativas seguras, estáveis e de alta performance para seu ambiente de trabalho.</p>
+              <ul class="service-features">
+                <li><i class="fa-solid fa-circle-check"></i> Cabeamento estruturado</li>
+                <li><i class="fa-solid fa-circle-check"></i> Configuração de roteadores e switches</li>
+                <li><i class="fa-solid fa-circle-check"></i> Segurança de rede e firewall</li>
+                <li><i class="fa-solid fa-circle-check"></i> Monitoramento 24/7</li>
+              </ul>
+              <a href="#contato" class="service-cta">
+                Solicitar orçamento <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <div class="service-card-glow" aria-hidden="true"></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         DIFERENCIAIS / PROCESSO
+    ════════════════════════════════════ -->
+    <section class="diferenciais section-light" id="diferenciais">
+      <div class="container">
+        <div class="section-header text-center reveal-fade-up">
+          <div class="section-tag">Por que escolher a marquesDevsis</div>
+          <h2 class="section-title">Comprometimento que gera<br/>resultados reais</h2>
+        </div>
+
+        <div class="diferenciais-grid">
+          <div class="diferencial-card reveal-fade-up" data-delay="0">
+            <div class="dif-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3>Entrega no Prazo</h3>
+            <p>Metodologia ágil com sprints definidos. Seus projetos são entregues dentro do cronograma acordado, sem surpresas.</p>
+          </div>
+          <div class="diferencial-card reveal-fade-up" data-delay="100">
+            <div class="dif-icon"><i class="fa-solid fa-comments"></i></div>
+            <h3>Comunicação Direta</h3>
+            <p>Canal exclusivo de comunicação durante todo o projeto. Você sabe exatamente o que está acontecendo em tempo real.</p>
+          </div>
+          <div class="diferencial-card reveal-fade-up" data-delay="200">
+            <div class="dif-icon"><i class="fa-solid fa-fingerprint"></i></div>
+            <h3>Soluções Únicas</h3>
+            <p>Nada de templates genéricos. Desenvolvemos soluções 100% personalizadas para as necessidades reais do seu negócio.</p>
+          </div>
+          <div class="diferencial-card reveal-fade-up" data-delay="300">
+            <div class="dif-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h3>Segurança em Primeiro Lugar</h3>
+            <p>Boas práticas de segurança em cada linha de código. Seus dados e os dos seus clientes estão sempre protegidos.</p>
+          </div>
+          <div class="diferencial-card reveal-fade-up" data-delay="400">
+            <div class="dif-icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Foco em Resultados</h3>
+            <p>Desenvolvemos com visão de negócio. Cada funcionalidade tem uma razão estratégica para estar no seu sistema.</p>
+          </div>
+          <div class="diferencial-card reveal-fade-up" data-delay="500">
+            <div class="dif-icon"><i class="fa-solid fa-life-ring"></i></div>
+            <h3>Suporte Contínuo</h3>
+            <p>Parceria de longo prazo. Após a entrega, nossa equipe permanece disponível para garantir o funcionamento perfeito.</p>
+          </div>
+        </div>
+
+        <!-- Linha de processo -->
+        <div class="processo-section reveal-fade-up">
+          <h3 class="processo-title">Como trabalhamos</h3>
+          <div class="processo-steps">
+            <div class="processo-step">
+              <div class="pstep-num">01</div>
+              <div class="pstep-content">
+                <strong>Diagnóstico</strong>
+                <span>Entendemos seu negócio, desafios e objetivos</span>
+              </div>
+            </div>
+            <div class="processo-arrow" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="processo-step">
+              <div class="pstep-num">02</div>
+              <div class="pstep-content">
+                <strong>Planejamento</strong>
+                <span>Definimos escopo, prazo e tecnologias</span>
+              </div>
+            </div>
+            <div class="processo-arrow" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="processo-step">
+              <div class="pstep-num">03</div>
+              <div class="pstep-content">
+                <strong>Desenvolvimento</strong>
+                <span>Construímos com agilidade e qualidade</span>
+              </div>
+            </div>
+            <div class="processo-arrow" aria-hidden="true"><i class="fa-solid fa-chevron-right"></i></div>
+            <div class="processo-step">
+              <div class="pstep-num">04</div>
+              <div class="pstep-content">
+                <strong>Entrega &amp; Suporte</strong>
+                <span>Lançamos e acompanhamos os resultados</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         PORTFÓLIO / PROJETOS
+    ════════════════════════════════════ -->
+    <section class="portfolio section-dark" id="portfolio">
+      <div class="portfolio-bg-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="section-header text-center reveal-fade-up">
+          <div class="section-tag">Nosso Portfólio</div>
+          <h2 class="section-title">Projetos que fazem<br/>a diferença</h2>
+          <p class="section-subtitle">Confira alguns dos projetos que desenvolvemos para nossos clientes.</p>
+        </div>
+
+        <div class="portfolio-filters reveal-fade-up">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="sistema">Sistemas</button>
+          <button class="filter-btn" data-filter="site">Sites</button>
+          <button class="filter-btn" data-filter="infra">Infraestrutura</button>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-card reveal-fade-up" data-category="sistema" data-delay="0">
+            <div class="pcard-visual">
+              <div class="pcard-mockup pcard-mockup-1">
+                <div class="mockup-screen">
+                  <div class="mockup-topbar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-content">
+                    <div class="mc-bar mc-bar-long"></div>
+                    <div class="mc-bar mc-bar-medium"></div>
+                    <div class="mc-grid">
+                      <div class="mc-cell"></div><div class="mc-cell"></div>
+                      <div class="mc-cell"></div><div class="mc-cell"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pcard-tag">Sistema</div>
+            </div>
+            <div class="pcard-info">
+              <h3>Sistema de Gestão Comercial</h3>
+              <p>ERP completo para controle de vendas, estoque, financeiro e relatórios gerenciais em tempo real.</p>
+              <div class="pcard-techs">
+                <span>PHP</span><span>MySQL</span><span>React</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal-fade-up" data-category="site" data-delay="100">
+            <div class="pcard-visual">
+              <div class="pcard-mockup pcard-mockup-2">
+                <div class="mockup-screen">
+                  <div class="mockup-topbar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-content">
+                    <div class="mc-hero-block"></div>
+                    <div class="mc-bar mc-bar-medium"></div>
+                    <div class="mc-bar mc-bar-short"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="pcard-tag">Site</div>
+            </div>
+            <div class="pcard-info">
+              <h3>E-commerce para Varejo</h3>
+              <p>Loja virtual completa com integração de pagamento, estoque automatizado e painel administrativo.</p>
+              <div class="pcard-techs">
+                <span>WooCommerce</span><span>PHP</span><span>JS</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal-fade-up" data-category="sistema" data-delay="200">
+            <div class="pcard-visual">
+              <div class="pcard-mockup pcard-mockup-3">
+                <div class="mockup-screen">
+                  <div class="mockup-topbar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-content">
+                    <div class="mc-sidebar">
+                      <div class="mc-sidebar-item"></div>
+                      <div class="mc-sidebar-item"></div>
+                      <div class="mc-sidebar-item"></div>
+                    </div>
+                    <div class="mc-main-area">
+                      <div class="mc-bar mc-bar-long"></div>
+                      <div class="mc-chart"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pcard-tag">Sistema</div>
+            </div>
+            <div class="pcard-info">
+              <h3>Plataforma de Agendamentos</h3>
+              <p>Sistema online de agendamentos com notificações automáticas, calendário integrado e relatórios.</p>
+              <div class="pcard-techs">
+                <span>Laravel</span><span>Vue.js</span><span>MySQL</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal-fade-up" data-category="infra" data-delay="300">
+            <div class="pcard-visual">
+              <div class="pcard-mockup pcard-mockup-4">
+                <div class="mockup-screen">
+                  <div class="mockup-topbar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-content mockup-network">
+                    <div class="network-node n-center"></div>
+                    <div class="network-node n-tl"></div>
+                    <div class="network-node n-tr"></div>
+                    <div class="network-node n-bl"></div>
+                    <div class="network-node n-br"></div>
+                    <svg class="network-lines" viewBox="0 0 200 120">
+                      <line x1="100" y1="60" x2="40" y2="30" stroke="#1696F3" stroke-width="1" opacity="0.5"/>
+                      <line x1="100" y1="60" x2="160" y2="30" stroke="#1696F3" stroke-width="1" opacity="0.5"/>
+                      <line x1="100" y1="60" x2="40" y2="90" stroke="#1696F3" stroke-width="1" opacity="0.5"/>
+                      <line x1="100" y1="60" x2="160" y2="90" stroke="#1696F3" stroke-width="1" opacity="0.5"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="pcard-tag">Infra</div>
+            </div>
+            <div class="pcard-info">
+              <h3>Rede Corporativa Completa</h3>
+              <p>Projeto e implantação de rede estruturada com 80 pontos, firewall dedicado e monitoramento contínuo.</p>
+              <div class="pcard-techs">
+                <span>Cisco</span><span>pfSense</span><span>Zabbix</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal-fade-up" data-category="site" data-delay="400">
+            <div class="pcard-visual">
+              <div class="pcard-mockup pcard-mockup-2">
+                <div class="mockup-screen">
+                  <div class="mockup-topbar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-content">
+                    <div class="mc-hero-block" style="background: linear-gradient(135deg, #153E7A, #22D3EE)"></div>
+                    <div class="mc-bar mc-bar-medium"></div>
+                    <div class="mc-bar mc-bar-short"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="pcard-tag">Site</div>
+            </div>
+            <div class="pcard-info">
+              <h3>Portal Institucional Empresarial</h3>
+              <p>Site corporativo completo com blog, área do cliente, formulários inteligentes e integração CRM.</p>
+              <div class="pcard-techs">
+                <span>WordPress</span><span>PHP</span><span>CSS3</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="portfolio-card reveal-fade-up" data-category="sistema" data-delay="500">
+            <div class="pcard-visual">
+              <div class="pcard-mockup pcard-mockup-1">
+                <div class="mockup-screen">
+                  <div class="mockup-topbar">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <div class="mockup-content">
+                    <div class="mc-bar mc-bar-long"></div>
+                    <div class="mc-bar mc-bar-medium"></div>
+                    <div class="mc-grid">
+                      <div class="mc-cell"></div><div class="mc-cell"></div>
+                      <div class="mc-cell"></div><div class="mc-cell"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pcard-tag">Sistema</div>
+            </div>
+            <div class="pcard-info">
+              <h3>App de Gestão de Frotas</h3>
+              <p>Aplicação web para rastreamento, manutenção e controle completo de frota de veículos empresariais.</p>
+              <div class="pcard-techs">
+                <span>Node.js</span><span>React</span><span>PostgreSQL</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         DEPOIMENTOS
+    ════════════════════════════════════ -->
+    <section class="depoimentos section-light">
+      <div class="container">
+        <div class="section-header text-center reveal-fade-up">
+          <div class="section-tag">Depoimentos</div>
+          <h2 class="section-title">O que nossos clientes dizem</h2>
+        </div>
+
+        <div class="testimonials-slider reveal-fade-up">
+          <div class="testimonials-track" id="testimonialsTrack">
+
+            <article class="testimonial-card">
+              <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="tcard-text">"A marquesDevsis transformou nossa operação. O sistema que desenvolveram reduziu em 60% o tempo que gastávamos em processos manuais. Entrega no prazo, suporte impecável e resultado acima do esperado."</p>
+              <div class="tcard-author">
+                <div class="tcard-avatar"><span>RC</span></div>
+                <div>
+                  <strong>Ricardo Campos</strong>
+                  <span>Diretor Comercial — DistribuidoraTech</span>
+                </div>
+              </div>
+              <div class="tcard-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="tcard-text">"Contratei o suporte mensal e não poderia estar mais satisfeita. Antes ficávamos horas com problemas técnicos. Agora resolvem em minutos, de forma remota ou presencial. Excelente custo-benefício."</p>
+              <div class="tcard-author">
+                <div class="tcard-avatar"><span>AM</span></div>
+                <div>
+                  <strong>Ana Menezes</strong>
+                  <span>Proprietária — Clínica Saúde &amp; Bem-estar</span>
+                </div>
+              </div>
+              <div class="tcard-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="tcard-text">"O site novo aumentou nossas conversões em 40% no primeiro mês. Design profissional, carregamento rápido e funcionando perfeitamente no celular. A equipe entendeu exatamente o que precisávamos."</p>
+              <div class="tcard-author">
+                <div class="tcard-avatar"><span>PS</span></div>
+                <div>
+                  <strong>Paulo Santos</strong>
+                  <span>CEO — Construtora Alvorada</span>
+                </div>
+              </div>
+              <div class="tcard-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </article>
+
+            <article class="testimonial-card">
+              <div class="tcard-quote"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="tcard-text">"A consultoria de TI nos ajudou a economizar mais de R$ 30 mil por ano em licenças de software desnecessárias e equipamentos mal aproveitados. Visão estratégica de verdade."</p>
+              <div class="tcard-author">
+                <div class="tcard-avatar"><span>LF</span></div>
+                <div>
+                  <strong>Luiza Ferreira</strong>
+                  <span>Gerente Financeira — Grupo Nexum</span>
+                </div>
+              </div>
+              <div class="tcard-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </article>
+
+          </div>
+
+          <div class="slider-controls">
+            <button class="slider-btn" id="sliderPrev" aria-label="Depoimento anterior">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="slider-dots" id="sliderDots"></div>
+            <button class="slider-btn" id="sliderNext" aria-label="Próximo depoimento">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════
+         CONTATO
+    ════════════════════════════════════ -->
+    <section class="contato section-dark" id="contato">
+      <div class="contato-bg-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="contato-grid">
+
+          <div class="contato-info reveal-fade-left">
+            <div class="section-tag">Entre em Contato</div>
+            <h2 class="section-title">Vamos construir algo<br/>incrível juntos?</h2>
+            <p class="section-text">Fale com nossa equipe. Respondemos em até 2 horas em dias úteis e adoramos entender novos desafios.</p>
+
+            <div class="contato-items">
+              <a href="https://wa.me/5500000000000" class="contato-item" target="_blank" rel="noopener">
+                <div class="ci-icon ci-whatsapp"><i class="fa-brands fa-whatsapp"></i></div>
+                <div>
+                  <strong>WhatsApp</strong>
+                  <span>Atendimento imediato</span>
+                </div>
+              </a>
+              <a href="mailto:contato@marquesdevsis.com.br" class="contato-item">
+                <div class="ci-icon ci-email"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <strong>contato@marquesdevsis.com.br</strong>
+                  <span>Resposta em até 2 horas</span>
+                </div>
+              </a>
+              <div class="contato-item">
+                <div class="ci-icon ci-local"><i class="fa-solid fa-location-dot"></i></div>
+                <div>
+                  <strong>Atendimento Presencial e Remoto</strong>
+                  <span>Atendemos em toda a região</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contato-social">
+              <a href="#" aria-label="Instagram" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" aria-label="GitHub" class="social-link"><i class="fa-brands fa-github"></i></a>
+              <a href="#" aria-label="Facebook" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+          </div>
+
+          <div class="contato-form-wrap reveal-fade-right">
+            <form class="contato-form" id="contatoForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="nome">Nome completo <span aria-hidden="true">*</span></label>
+                  <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+                </div>
+                <div class="form-group">
+                  <label for="empresa">Empresa</label>
+                  <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email">E-mail <span aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="seu@email.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="telefone">WhatsApp / Telefone</label>
+                  <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="servico">Serviço de interesse</label>
+                <select id="servico" name="servico">
+                  <option value="">Selecione um serviço</option>
+                  <option value="sistema">Desenvolvimento de Sistemas</option>
+                  <option value="site">Criação de Sites</option>
+                  <option value="suporte">Suporte Técnico</option>
+                  <option value="manutencao">Manutenção de Computadores</option>
+                  <option value="consultoria">Consultoria de TI</option>
+                  <option value="redes">Redes &amp; Infraestrutura</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="mensagem">Mensagem <span aria-hidden="true">*</span></label>
+                <textarea id="mensagem" name="mensagem" rows="4" placeholder="Descreva brevemente seu projeto ou necessidade..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                <span class="btn-text">Enviar Mensagem</span>
+                <span class="btn-loading" hidden>
+                  <i class="fa-solid fa-spinner fa-spin"></i> Enviando...
+                </span>
+                <i class="fa-solid fa-paper-plane btn-icon"></i>
+              </button>
+              <div class="form-success" id="formSuccess" hidden>
+                <i class="fa-solid fa-circle-check"></i>
+                Mensagem enviada! Entraremos em contato em breve.
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#inicio" class="logo-link" aria-label="marquesDevsis">
+          <div class="logo-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="42" height="42" rx="10" fill="url(#footerLogoGrad)"/>
+              <path d="M8 31V11L15.5 23L21 14L26.5 23L34 11V31" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <circle cx="34" cy="11" r="2.5" fill="#22D3EE"/>
+              <circle cx="8" cy="11" r="2.5" fill="#22D3EE"/>
+              <defs>
+                <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="42" y2="42" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#153E7A"/>
+                  <stop offset="100%" stop-color="#1696F3"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <span class="logo-text">
+            <span class="logo-marques">marques</span><span class="logo-devsis">Devsis</span>
+          </span>
+        </a>
+        <p>Tecnologia que transforma negócios. Soluções digitais completas com excelência e comprometimento.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Serviços</h4>
+          <ul>
+            <li><a href="#servicos">Desenvolvimento de Sistemas</a></li>
+            <li><a href="#servicos">Criação de Sites</a></li>
+            <li><a href="#servicos">Suporte Técnico</a></li>
+            <li><a href="#servicos">Manutenção de Computadores</a></li>
+            <li><a href="#servicos">Consultoria de TI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="mailto:contato@marquesdevsis.com.br"><i class="fa-solid fa-envelope"></i> contato@marquesdevsis.com.br</a></li>
+            <li><a href="https://wa.me/5500000000000" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="currentYear">2024</span> marquesDevsis. Todos os direitos reservados.</p>
+        <p>Desenvolvido com <i class="fa-solid fa-heart" style="color:#1696F3"></i> pela marquesDevsis</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
