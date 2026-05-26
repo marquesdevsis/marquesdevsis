@@ -87,13 +87,13 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
-  cursor: none;
+  /* cursor: none; */
 }
 
 img, video { max-width: 100%; display: block; }
 a { text-decoration: none; color: inherit; }
 ul, ol { list-style: none; }
-button { cursor: none; border: none; background: none; font-family: inherit; }
+button { border: none; background: none; font-family: inherit; }
 select, input, textarea { font-family: inherit; }
 
 /* ── PARTICLE CANVAS ── */
@@ -109,7 +109,7 @@ select, input, textarea { font-family: inherit; }
 }
 
 /* ── CUSTOM CURSOR ── */
-.cursor-dot,
+/* .cursor-dot,
 .cursor-ring {
   position: fixed;
   top: 0; left: 0;
@@ -146,7 +146,7 @@ body.cursor-hover .cursor-dot {
 body.cursor-hover .cursor-ring {
   width: 48px; height: 48px;
   border-color: rgba(22, 150, 243, 0.5);
-}
+} */
 
 /* ── CONTAINER ── */
 .container {
@@ -2077,6 +2077,6 @@ select:focus-visible {
 
 /* Print styles */
 @media print {
-  .site-header, .scroll-top, #particleCanvas, .cursor-dot, .cursor-ring { display: none !important; }
+  .site-header, .scroll-top, #particleCanvas { display: none !important; }
   body { background: white; color: black; }
 }

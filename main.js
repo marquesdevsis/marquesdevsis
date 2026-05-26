@@ -121,46 +121,46 @@
   /* ══════════════════════
      CUSTOM CURSOR
   ══════════════════════ */
-  const cursorDot = document.getElementById('cursorDot');
-  const cursorRing = document.getElementById('cursorRing');
-  let mouseX = 0, mouseY = 0;
-  let ringX = 0, ringY = 0;
-  let cursorVisible = false;
+  // const cursorDot = document.getElementById('cursorDot');
+  // const cursorRing = document.getElementById('cursorRing');
+  // let mouseX = 0, mouseY = 0;
+  // let ringX = 0, ringY = 0;
+  // let cursorVisible = false;
 
-  if (window.matchMedia('(pointer: fine)').matches) {
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
+  // if (window.matchMedia('(pointer: fine)').matches) {
+  //   document.addEventListener('mousemove', (e) => {
+  //     mouseX = e.clientX;
+  //     mouseY = e.clientY;
 
-      if (!cursorVisible) {
-        cursorVisible = true;
-        cursorDot.style.opacity = '1';
-        cursorRing.style.opacity = '1';
-      }
+  //     if (!cursorVisible) {
+  //       cursorVisible = true;
+  //       cursorDot.style.opacity = '1';
+  //       cursorRing.style.opacity = '1';
+  //     }
 
-      cursorDot.style.left = mouseX + 'px';
-      cursorDot.style.top = mouseY + 'px';
-    });
+  //     cursorDot.style.left = mouseX + 'px';
+  //     cursorDot.style.top = mouseY + 'px';
+  //   });
 
-    document.addEventListener('mouseleave', () => {
-      cursorDot.style.opacity = '0';
-      cursorRing.style.opacity = '0';
-    });
+  //   document.addEventListener('mouseleave', () => {
+  //     cursorDot.style.opacity = '0';
+  //     cursorRing.style.opacity = '0';
+  //   });
 
-    document.querySelectorAll('a, button, .service-card, .portfolio-card, .filter-btn').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
+  //   document.querySelectorAll('a, button, .service-card, .portfolio-card, .filter-btn').forEach(el => {
+  //     el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+  //     el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+  //   });
 
-    function animateCursorRing() {
-      ringX += (mouseX - ringX) * 0.12;
-      ringY += (mouseY - ringY) * 0.12;
-      cursorRing.style.left = ringX + 'px';
-      cursorRing.style.top = ringY + 'px';
-      requestAnimationFrame(animateCursorRing);
-    }
-    animateCursorRing();
-  }
+  //   function animateCursorRing() {
+  //     ringX += (mouseX - ringX) * 0.12;
+  //     ringY += (mouseY - ringY) * 0.12;
+  //     cursorRing.style.left = ringX + 'px';
+  //     cursorRing.style.top = ringY + 'px';
+  //     requestAnimationFrame(animateCursorRing);
+  //   }
+  //   animateCursorRing();
+  // }
 
 
   /* ══════════════════════
